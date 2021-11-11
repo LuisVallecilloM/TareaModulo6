@@ -1,0 +1,338 @@
+import Clases.Boxeo;
+import Clases.Futbol;
+import Clases.HospitalEscuela;
+import Clases.InstanciaPersona;
+import Clases.Metodos;
+import Clases.SanFelipe;
+import Clases.SeguroSocial;
+import Clases.Tenis;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+        //Creacion de instancias
+        Metodos m = new Metodos();
+        InstanciaPersona doctor = new InstanciaPersona();
+        HospitalEscuela HS = new HospitalEscuela();
+        SeguroSocial SS = new SeguroSocial();
+        SanFelipe SF = new SanFelipe();
+        InstanciaPersona deportista = new InstanciaPersona();
+        Futbol f = new Futbol();
+        Boxeo b = new Boxeo();
+        Tenis t = new Tenis();
+        
+        //Variables
+        String Nombre;
+        int Edad;
+        int ingreso;
+        String EstadoCivil;
+        String TipoSangre;
+        String Direccion;
+        String Telefono;
+        String Celular;
+        String Email;
+        String Puesto;
+
+        System.out.print ("Ingrese el nombre del doctor: ");
+        Nombre = scan.next();
+        doctor.setNombre(Nombre);
+        System.out.println("");
+    
+         System.out.print ("Ingrese la edad del doctor: ");
+         Edad = scan.nextInt();
+         doctor.setEdad(Edad);
+         System.out.println("");
+         
+         System.out.print ("Ingrese el estado civil del doctor: ");
+         EstadoCivil = scan.next();
+         doctor.setEstadoCivil(EstadoCivil);
+         System.out.println("");
+         
+         System.out.print ("Ingrese el tipo de sangre del doctor: ");
+         TipoSangre = scan.next();
+         doctor.setTipoSangre(TipoSangre);
+         System.out.println("");
+         
+         System.out.print ("Ingrese direccion del doctor: ");
+         Direccion = scan.next();
+         doctor.setDireccion(Direccion);
+         System.out.println("");
+         
+         System.out.print ("Ingrese el telefono fijo del doctor: ");
+         Telefono = scan.next();
+         doctor.setTelefono(Telefono);
+         System.out.println("");
+         
+         System.out.print ("Ingrese el celular del doctor: ");
+         Celular = scan.next();
+         doctor.setCelular(Celular);
+         System.out.println("");
+         
+         System.out.print ("Ingrese el correo electronico del doctor: ");
+         Email = scan.next();
+         doctor.setEmail(Email);
+         System.out.println("");
+         
+         System.out.print ("Ingrese el puesto del doctor: ");
+         Puesto = scan.next();
+         doctor.setPuesto(Puesto);
+         System.out.println("");
+         
+         System.out.println ("Ingrese el numero de cualquiera de las opciones del hospital al cual pertenece el doctor: \n1.Hospital Escuela\n2.Seguro Social\n3.San Felipe");
+         ingreso = scan.nextInt();
+         System.out.println("");
+         
+          if(ingreso == 1){
+             m.imprimirInstanciaDoctor(Nombre, Edad, EstadoCivil, TipoSangre, Direccion, Telefono, Celular, Email, Puesto);
+             System.out.println ("El hospital al que pertenece: "+HS.getHospital());
+         } else if (ingreso == 2){
+             m.imprimirInstanciaDoctor(Nombre, Edad, EstadoCivil, TipoSangre, Direccion, Telefono, Celular, Email, Puesto);
+             System.out.println ("El hospital al que pertenece: "+SS.getHospital());
+         } else {
+             m.imprimirInstanciaDoctor(Nombre, Edad, EstadoCivil, TipoSangre, Direccion, Telefono, Celular, Email, Puesto);
+             System.out.println ("El hospital al que pertenece: "+SF.getHospital());
+         }
+        
+        System.out.println("");
+        System.out.print ("Ingrese el nombre del deportista: ");
+        Nombre = scan.next();
+        deportista.setNombre(Nombre);
+        System.out.println("");
+    
+         System.out.print ("Ingrese la edad del deportista: ");
+         Edad = scan.nextInt();
+         deportista.setEdad(Edad);
+         System.out.println("");
+         
+         System.out.print ("Ingrese el estado civil del deportista: ");
+         EstadoCivil = scan.next();
+         deportista.setEstadoCivil(EstadoCivil);
+         System.out.println("");
+         
+         System.out.print ("Ingrese el tipo de sangre del deportista: ");
+         TipoSangre = scan.next();
+         deportista.setTipoSangre(TipoSangre);
+         System.out.println("");
+         
+         System.out.print ("Ingrese direccion del deportista: ");
+         Direccion = scan.next();
+         deportista.setDireccion(Direccion);
+         System.out.println("");
+         
+         System.out.print ("Ingrese el telefono fijo del deportista: ");
+         Telefono = scan.next();
+         deportista.setTelefono(Telefono);
+         System.out.println("");
+         
+         System.out.print ("Ingrese el celular del deportista: ");
+         Celular = scan.next();
+         deportista.setCelular(Celular);
+         System.out.println("");
+         
+         System.out.print ("Ingrese el correo electronico del deportista: ");
+         Email = scan.next();
+         deportista.setEmail(Email);
+         System.out.println("");
+         
+         System.out.print ("Ingrese el puesto del deportista: ");
+         Puesto = scan.next();
+         deportista.setPuesto(Puesto);
+         System.out.println("");
+         
+         System.out.println ("Ingrese el numero de cualquiera de las opciones del deporte que practica el deportista: \n1.Futbol\n2.Boxeo\n3.Tenis");
+         ingreso = scan.nextInt();  
+         System.out.println("");
+         
+         if(ingreso == 1){
+             m.imprimirInstanciaDeportista(Nombre, Edad, EstadoCivil, TipoSangre, Direccion, Telefono, Celular, Email, Puesto);
+             System.out.println ("El deporte que ejerce: "+f.getDeporte());
+         } else if (ingreso == 2){
+             m.imprimirInstanciaDeportista(Nombre, Edad, EstadoCivil, TipoSangre, Direccion, Telefono, Celular, Email, Puesto);
+             System.out.println ("El deporte que ejerce: "+b.getDeporte());
+         } else {
+             m.imprimirInstanciaDeportista(Nombre, Edad, EstadoCivil, TipoSangre, Direccion, Telefono, Celular, Email, Puesto);
+             System.out.println ("El deporte que ejerce: "+t.getDeporte());
+         }
+    }
+}
+
+public class InstanciaPersona {
+     //variables
+    public String Nombre;
+    public int Edad;
+    public String EstadoCivil;
+    public String TipoSangre;
+    public String Direccion;
+    public String Telefono;
+    public String Celular;
+    public String Email; 
+    public String Puesto;
+    
+    //Constructores
+    public InstanciaPersona() {
+    }
+
+    public InstanciaPersona(String Nombre, int Edad, String EstadoCivil, String TipoSangre, String Direccion, String Telefono, String Celular, String Email, String Puesto) {
+        this.Nombre = Nombre;
+        this.Edad = Edad;
+        this.EstadoCivil = EstadoCivil;
+        this.TipoSangre = TipoSangre;
+        this.Direccion = Direccion;
+        this.Telefono = Telefono;
+        this.Celular = Celular;
+        this.Email = Email;
+        this.Puesto = Puesto;
+    }
+
+    //Getters y Setters
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public int getEdad() {
+        return Edad;
+    }
+
+    public void setEdad(int Edad) {
+        this.Edad = Edad;
+    }
+
+    public String getEstadoCivil() {
+        return EstadoCivil;
+    }
+
+    public void setEstadoCivil(String EstadoCivil) {
+        this.EstadoCivil = EstadoCivil;
+    }
+
+    public String getTipoSangre() {
+        return TipoSangre;
+    }
+
+    public void setTipoSangre(String TipoSangre) {
+        this.TipoSangre = TipoSangre;
+    }
+
+    public String getDireccion() {
+        return Direccion;
+    }
+
+    public void setDireccion(String Direccion) {
+        this.Direccion = Direccion;
+    }
+
+    public String getTelefono() {
+        return Telefono;
+    }
+
+    public void setTelefono(String Telefono) {
+        this.Telefono = Telefono;
+    }
+
+    public String getCelular() {
+        return Celular;
+    }
+
+    public void setCelular(String Celular) {
+        this.Celular = Celular;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String Email) {
+        this.Email = Email;
+    }
+
+    public String getPuesto() {
+        return Puesto;
+    }
+
+    public void setPuesto(String Puesto) {
+        this.Puesto = Puesto;
+    }
+}
+
+public abstract class Doctores extends InstanciaPersona {
+    //Declaracion de metodos abstractos
+    abstract String getHospital();
+   
+}
+
+public abstract class Deportistas extends InstanciaPersona{
+    //Declaracion de metodos abstractos
+    abstract String getDeporte();
+
+}
+
+public class Metodos {
+    
+     public void imprimirInstanciaDoctor(String Nombre, int Edad, String EstadoCivil, String TipoSangre, String Direccion, String Telefono, String Celular, String Email, String Puesto){
+        System.out.println("Nombre: "+Nombre+"\n"+
+                "Edad: "+Edad+"\n"+
+                "Estado Civil: "+EstadoCivil+"\n"+
+                "Tipo de Sangre: "+TipoSangre+"\n"+
+                "Direccion: "+Direccion+"\n"+
+                "Telefono: "+Telefono+"\n"+
+                "Celular: "+Celular+"\n"+
+                "Email: "+Email+"\n"+
+                "Puesto de trabajo: "+Puesto);
+    }
+    
+    public void imprimirInstanciaDeportista(String Nombre, int Edad, String EstadoCivil, String TipoSangre, String Direccion, String Telefono, String Celular, String Email, String Puesto){
+        System.out.println("Nombre: "+Nombre+"\n"+
+                "Edad: "+Edad+"\n"+
+                "Estado Civil: "+EstadoCivil+"\n"+
+                "Tipo de Sangre: "+TipoSangre+"\n"+
+                "Direccion: "+Direccion+"\n"+
+                "Telefono: "+Telefono+"\n"+
+                "Celular: "+Celular+"\n"+
+                "Email: "+Email+"\n"+
+                "Puesto de trabajo: "+Puesto);
+    }
+    
+}
+
+public class Boxeo {
+    public String getDeporte() {
+        return "Boxeo";
+    }
+}
+
+public class Futbol {
+    public String getDeporte() {
+        return "Futbol";
+    }
+}
+
+public class Tenis {
+     public String getDeporte() {
+        return "Tenis";
+    }
+}
+
+public class HospitalEscuela {
+    public String getHospital() {
+       return "Hospital Escuela";
+    }
+}
+
+public class SanFelipe {
+    public String getHospital() {
+       return "San Felipe";
+    }
+}
+
+public class SeguroSocial {
+    public String getHospital() {
+       return "Seguro Social";
+    }
+}
